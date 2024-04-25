@@ -13,6 +13,8 @@ function App() {
   }
 
   return (
+    <div>
+    <button onClick={() => window.location.href = "/cart"}>Cart</button>
     <div className='products'>
        {
         data?.map(product => <div key={product.id} className='product'>
@@ -21,7 +23,9 @@ function App() {
           <p>{product.price}</p>
         </div>)
        }
-      </div>     
+      </div>  
+    </div>
+      
   )
 }
 

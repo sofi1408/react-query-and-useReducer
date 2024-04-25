@@ -18,3 +18,10 @@ img{
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+button{
+  margin-bottom: 40px;
+  background-color: black !important;
+  color: white;
+  float: right;
+}
