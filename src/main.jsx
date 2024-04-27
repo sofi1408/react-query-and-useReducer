@@ -8,6 +8,8 @@ import {
 import './index.css'
 import {QueryClientProvider, QueryClient} from '@tanstack/react-query'
 
+import CartProvider from './components/CartProvider';
+
 import Cart from './components/Cart.jsx';
 
 const queryClient = new QueryClient();
@@ -26,7 +28,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-    <RouterProvider router={router} />
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
     </QueryClientProvider>
   </React.StrictMode>,
 )

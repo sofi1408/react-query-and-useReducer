@@ -1,7 +1,10 @@
 import './App.css'
+import { NavLink } from "react-router-dom";
 import useProduct from './hooks/useProduct'
 
+import Product from './components/Product'
 function App() {
+
   const { isPending, isError, error, data} = useProduct();
 
   if(isPending){
@@ -14,18 +17,15 @@ function App() {
 
   return (
     <div>
-    <button onClick={() => window.location.href = "/cart"}>Cart</button>
-    <div className='products'>
-       {
-        data?.map(product => <div key={product.id} className='product'>
-          <img src={product.image} alt={product.title} />
-          <h3>{product.title}</h3>
-          <p>{product.price}</p>
-        </div>)
-       }
-      </div>  
-    </div>
-      
+      <button><NavLink to="/cart">Cart</NavLink> </button>
+      <div className='products'>
+         {
+          data?.map(product => 
+            <Product key={product.id} product={product} />
+          )
+         }
+        </div>  
+      </div>
   )
 }
 
