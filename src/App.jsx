@@ -1,8 +1,8 @@
 import './App.css'
-import useProduct from './hooks/useProduct'
+import useProducts from './hooks/useProducts'
 
 function App() {
-  const { isPending, isError, error, data} = useProduct();
+  const { isPending, isError, error, data} = useProducts();
 
   if(isPending){
     return <h1>Loading...</h1>
