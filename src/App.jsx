@@ -1,20 +1,11 @@
 import './App.css'
-import useProduct from './hooks/useProduct'
 
 import useProducts from './hooks/useProducts'
 
 import { useMutation } from '@tanstack/react-query'
 
 function App() {
-  const { isPending, isError, error, data} = useProduct();
-
-  if(isPending){
-    return <h1>Loading...</h1>
-  }
-
-  if(isError){
-    return <h1>{error.message}</h1>
-  }
+  const { isPending, isError, error, data} = useProducts();
 
   const mutation = useMutation({
     mutationFn: () => fetch('https://fakestoreapi.com/products',{
@@ -33,16 +24,14 @@ function App() {
       .then(json=>console.log(json))
   })
 
-
-  const {isPending, data, error, isError} = useProducts();
-
-  if(isPending) {
+  if(isPending){
     return <h1>Loading...</h1>
   }
 
-  if(isError) {
+  if(isError){
     return <h1>{error.message}</h1>
   }
+
 
 
   return (
