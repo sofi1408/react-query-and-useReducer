@@ -18,7 +18,7 @@ const Product = ({product}) => {
     <img src={product.image} alt={product.title} />
     <h3>{product.title.substring(0,25)}</h3>
     <p>{product.price}</p>
-    <button onClick={() => addToCart(product)}>Add To Cart</button>
+    <button onClick={() => addToCart(product)} style={{float: 'none'}}>Add To Cart</button>
   </div>
   )
 }

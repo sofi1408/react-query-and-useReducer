@@ -1,11 +1,11 @@
 import './App.css'
 import { NavLink } from "react-router-dom";
-import useProduct from './hooks/useProduct'
+import useProducts from './hooks/useProducts'
 
 import Product from './components/Product'
 function App() {
 
-  const { isPending, isError, error, data} = useProduct();
+  const { isPending, isError, error, data} = useProducts();
 
   if(isPending){
     return <h1>Loading...</h1>

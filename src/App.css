@@ -23,4 +23,27 @@ button{
   margin-bottom: 40px;
   background-color: black !important;
   color: white;
+  float: right;
+}
+
+.cart img{
+  width: 120px;
+  height: 150px;
+}
+
+.cartItem span{
+  margin-left: 50px;
+}
+
+.cartItem{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0;
+  border-bottom: 1px dotted;
+}
+
+.cartItem button{
+  margin-bottom: 0;
+  margin-left: 50px;
 }
